@@ -1,0 +1,160 @@
+@import 'base.scss';
+$color:#FD6F89;
+$headerColor:#0E0014;
+@mixin animations($ption){
+	-webkit-animation:$ption;
+	-moz-animation:$ption;
+	-ms-animation:$ption;
+	-o-animation:$ption;
+	animation:$ption;
+}
+body{
+	background: url(../images/bg.jpg) no-repeat center center;
+	background-size:cover;
+	margin:0 auto;
+}
+.container {
+	padding-bottom:20px;
+	img{
+		max-width: 100%;
+	}
+	.header{
+		width: 100%;
+		height:45px;
+		line-height:45px;
+		white-space: nowrap;
+		background: $headerColor;
+		text-align:center;
+		h1{
+			color:#fff;
+			font-weight:normal;
+			font-size: 18px;
+		}
+		a > img{
+			width: 25px;
+		}
+		.return{
+			float:left;
+			margin:14px 0 0 10px;
+			display:inline;
+		}
+		.return-index{
+			float:right;
+			margin:10px 10px 0 0;
+			display:inline;
+		}
+	
+	}
+	.shake{
+		width: 50px;
+		height: 50px;
+		padding:15%;
+		margin:10% auto;
+		border-radius: 50%;
+		text-align: center;
+		border:20px solid $color;
+		background:#ED5470 url(../images/shake.png) no-repeat 50% 50%;
+		background-size: 60%;
+	}
+	.shake-music{
+		// -webkit-animation:animations .2s linear 0 10 alternate;
+		@include animations(animations .2s linear 0 10 alternate);
+	}
+	.rule{
+		padding:20px;
+		margin:0 20px;
+		color:#fff;
+		background:rgba(113,90,93,.5);
+		.ac-tit{
+			text-align:center;
+			margin-bottom: 10px;
+			h2{
+				font-weight:normal;
+				font-size: 18px;
+			}
+		}
+		.rule-content{
+			color: #FAEDED;
+			.ac-sum{
+				margin-bottom: 10px;
+				h3{
+					font-weight:normal;
+					font-size: 16px;
+					margin-bottom: 5px;
+					color:#F2C4CB;
+				}
+				p{
+					font-size: 14px;
+				}
+				.awards li{
+					line-height:22px;
+				}
+
+			}
+			.copyright{
+				color: #E3D3CE;
+			}
+
+		} 
+	}
+}
+.loading{
+	position:fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	margin:0;
+	background:#fff url(../images/loading.gif) no-repeat  center 50%;
+}
+.awardsBox{
+	@extend .loading ;
+	background:rgba(0,0,0,.6);
+	z-index:9997;
+	display:none;
+	.awardsBoxCont{
+		position:absolute;
+		top:35%;
+		right:10%;
+		left:10%;
+		padding: 20px;
+		background: #D6C9D3;
+		z-index: 9998;
+		color:#1D0E16;
+		text-align:center;
+		font-size:20px;
+		.close{
+			position:absolute;
+			right: -15px;
+			top: -10px;
+			width:30px;
+			height:30px;
+			line-height: 30px;
+			background:#64556C;
+			border-radius:50%;
+			z-index: 9999;
+			text-decoration: none;
+			color:#fff;
+		}
+		p{
+			font-size:18px;
+			line-height: 28px;
+
+		}
+	}
+	
+}
+@-webkit-keyframes animations{
+	0%{
+		background-position:50% 50%;
+	}
+	50%{
+		background-position:50% 46%;
+	}
+	100%{
+		background-position:50% 42%;
+		
+	}
+}
