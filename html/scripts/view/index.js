@@ -4,7 +4,7 @@
  * @date    2014-10-23 19:54:33
  * @version $Id$
  */
-define(['zepto','underscore','backbone','text!../../template/main.html','shake'],function ($,_,Backbone,indexViewTmp,Carousel){
+define(['zepto','underscore','backbone','text!../../template/main.html','shake','../collection/collection'],function ($,_,Backbone,indexViewTmp,Carousel,appCollection){
 		var indexView=Backbone.View.extend({
 			el:'#main',
 			template:_.template(indexViewTmp),
@@ -16,7 +16,12 @@ define(['zepto','underscore','backbone','text!../../template/main.html','shake']
 				$(this.el).shake();
 			},
 			open:function(){
-				
+				// appCollection.url='html/scripts/text.json';
+				appCollection.fetch({
+					success:function(msg,data){
+						console.log(data)
+					}
+				})
 			}
 		})
 		return new indexView;
