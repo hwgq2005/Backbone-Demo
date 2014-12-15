@@ -4,9 +4,11 @@
       <a class="icon icon-home pull-right"></a>
       <h1 class="title">App</h1>
     </header>
-    <ul class="table-view" style="border-top:none;">
+    <ul class="table-view" style="border-top:none;" id="table-list">
         <% _.each(data.data.site_hot,function(app) { %>
-        <li class="table-view-cell"><a class="navigate-right" href ="<%= app.weburl%>"><%= app.name%></a></li>
+        <li class="table-view-cell"><a class="navigate-right" href ="<%= app.weburl%>"><%= app.name%></a>
+            <a href="#" class="btn btn-negative delete" style="display:none;">移除</a>
+        </li>
         <%})%>
     </ul>
     <nav class="bar bar-tab">

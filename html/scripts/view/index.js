@@ -9,7 +9,8 @@ define(['zepto','underscore','backbone','text!../../template/main.html','shake',
 			el:'#main',
 			template:_.template(indexViewTmp),
 			events: {
-				'click .body':'open'
+				'touchstart #table-list .table-view-cell':'touchstart',
+				'touchstart #table-list .table-view-cell .delete':'del'
 			},
 			rander:function(){ 
 				var _this=this;
@@ -19,6 +20,15 @@ define(['zepto','underscore','backbone','text!../../template/main.html','shake',
 						$(_this.el).html(_this.template({data:model.toJSON()}));
 					}
 				})
+			},
+			touchstart:function(e){
+				var _left=$(e.currentTarget);
+				_left.find('.delete').show();
+				return false;
+			},
+			del:function(e){
+				var _left=$(e.currentTarget);
+				_left.parent().remove();
 			}
 		
 		})
