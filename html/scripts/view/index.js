@@ -9,8 +9,8 @@ define(['zepto','underscore','backbone','text!../../template/main.html','shake',
 			el:'#main',
 			template:_.template(indexViewTmp),
 			events: {
-				'touchstart .list .bar .isedit':'touchstart',
-				'touchstart #table-list .table-view-cell .delete':'del'
+				'click .list .bar .isedit':'touchstart',
+				'click #table-list .table-view-cell .delete':'del'
 			},
 			rander:function(){ 
 				var _this=this;
@@ -24,11 +24,11 @@ define(['zepto','underscore','backbone','text!../../template/main.html','shake',
 			touchstart:function(e){
 				var _left=$(e.currentTarget),
 					isedit=_left.data('isedit');
-				if (isedit == false) {
+				if (isedit === false) {
 					var _html='<a href="#" class="btn btn-negative delete" >移除</a>';
 					$('.table-view li').append(_html);
 					_left.data('isedit','true').text('完成');
-					
+
 				}else{
 					$('.table-view li').find('.delete').remove();
 					_left.data('isedit','false').text('编辑');
