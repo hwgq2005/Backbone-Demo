@@ -5,13 +5,17 @@
  * @version $Id$
  */
 
-define(['zepto','underscore','backbone','../view/index'],function ($,_,Backbone,index){
+define(['zepto','underscore','backbone','../view/index','../view/shake'],function ($,_,Backbone,index,shake){
 		var Router=Backbone.Router.extend({
 			routes:{
-				'':'Index'
+						'':'index',
+				'activity':'activity'
 			},
-			Index:function(){
+			index:function(){
 				this.change(index);
+			},
+			activity:function(){
+				this.change(shake);
 			},
 			change:function(page){
 				page.rander(page);

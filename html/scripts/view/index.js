@@ -9,20 +9,18 @@ define(['zepto','underscore','backbone','text!../../template/main.html','shake',
 			el:'#main',
 			template:_.template(indexViewTmp),
 			events: {
-				'click .container':'open'
+				'click .body':'open'
 			},
 			rander:function(){ 
-				$(this.el).html(this.template());
-				$(this.el).shake();
-			},
-			open:function(){
-				// appCollection.url='html/scripts/text.json';
+				var _this=this;
 				appCollection.fetch({
-					success:function(msg,data){
-						console.log(data)
+					success:function(model,response,option){
+						console.log(response)
+						$(_this.el).html(_this.template({data:model.toJSON()}));
 					}
 				})
 			}
+		
 		})
 		return new indexView;
 });

@@ -46,14 +46,14 @@ module.exports = function(grunt) {
           yuicompress: true
         },
         files: {
-          'html/style/shake.css': ['sass/main.scss']
+          'html/style/app.css': ['sass/main.scss']
         }
         // files: [
         //     {
         //         expand: true,
-        //         cwd: 'html/src/less/',
-        //         src: ['*.less'],
-        //         dest: 'html/css/',
+        //         cwd: 'sass/',
+        //         src: ['*.scss'],
+        //         dest: 'html/style/',
         //         ext: '.css'
         //     }
         // ]
