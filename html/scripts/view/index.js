@@ -23,7 +23,8 @@ define(['zepto','underscore','backbone','text!../../template/main.html','shake',
 			},
 			touchstart:function(e){
 				var _left=$(e.currentTarget);
-				_left.find('.delete').show();
+				var _html='<a href="#" class="btn btn-negative delete" >移除</a>'
+				_left.append(_html);
 				return false;
 			},
 			del:function(e){
