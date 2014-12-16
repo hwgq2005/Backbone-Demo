@@ -16,7 +16,10 @@ define(['zepto','underscore','backbone','text!../../template/main.html','shake',
 				var _this=this;
 				appCollection.fetch({
 					success:function(model,response,option){
-						console.log(response)
+						_.each(response.data.site_hot,function(elem,i){
+							console.log(elem.name);
+						})
+						console.log(model)
 						$(_this.el).html(_this.template({data:model.toJSON()}));
 					}
 				})
