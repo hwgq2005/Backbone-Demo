@@ -17,9 +17,16 @@ define(['zepto','underscore','backbone','text!../../template/main.html','shake',
 				appCollection.fetch({
 					success:function(model,response,option){
 						_.each(response.data.site_hot,function(elem,i){
-							console.log(elem.name);
+							// console.log(elem);
+
 						})
-						console.log(model)
+
+						//实现搜索某个值返回数据
+						var aaa=_.filter(response.data.site_hot,function(elem,i){
+							console.log(elem)
+							return elem.description.match(/新/); 
+						});
+						console.log(aaa);
 						$(_this.el).html(_this.template({data:model.toJSON()}));
 					}
 				})
@@ -28,7 +35,7 @@ define(['zepto','underscore','backbone','text!../../template/main.html','shake',
 				var _left=$(e.currentTarget),
 					isedit=_left.data('isedit');
 				if (isedit === false) {
-					var _html='<a href="#" class="btn btn-negative delete" >移除</a>';
+					var _html='<a href="javascript:;" class="btn btn-negative delete" >移除</a>';
 					$('.table-view li').append(_html);
 					_left.data('isedit','true').text('完成');
 
@@ -43,6 +50,7 @@ define(['zepto','underscore','backbone','text!../../template/main.html','shake',
 				// $.getJSON('destory.json',{data:val}, function(data){
 				//   console.log(data)
 				// })
+				
 			}
 		
 		})
