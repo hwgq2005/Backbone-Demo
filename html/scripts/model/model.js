@@ -7,7 +7,8 @@
 
 define(['zepto','underscore','backbone'],function ($,_,Backbone){
 		var appModel=Backbone.Model.extend({
-			url:''
+			url:'',
+			idAttribute:''
 		})
 		return new appModel;
 });

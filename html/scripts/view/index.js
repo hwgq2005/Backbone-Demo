@@ -37,6 +37,9 @@ define(['zepto','underscore','backbone','text!../../template/main.html','shake',
 			del:function(e){
 				var _left=$(e.currentTarget);
 				_left.parent().remove();
+				// $.getJSON('destory.json',{data:val}, function(data){
+				//   console.log(data)
+				// })
 			}
 		
 		})
