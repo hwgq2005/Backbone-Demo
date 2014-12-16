@@ -53,7 +53,8 @@ i {
     .yaoyiyao .header h1 {
       color: white;
       font-weight: normal;
-      font-size: 18px; }
+      font-size: 18px;
+      line-height: 45px; }
     .yaoyiyao .header a > img {
       width: 25px; }
     .yaoyiyao .header .return {
