@@ -4,7 +4,7 @@
  * @date    2014-10-23 19:54:33
  * @version $Id$
  */
-define(['zepto','underscore','backbone','text!../../template/main.html','shake','../collection/collection'],function ($,_,Backbone,indexViewTmp,Carousel,appCollection){
+define(['zepto','underscore','backbone','text!../../template/main.html','shake','../collection/collection','../model/model'],function ($,_,Backbone,indexViewTmp,Carousel,appCollection,appModel){
 		var indexView=Backbone.View.extend({
 			el:'#main',
 			template:_.template(indexViewTmp),
@@ -14,20 +14,20 @@ define(['zepto','underscore','backbone','text!../../template/main.html','shake',
 			},
 			rander:function(){ 
 				var _this=this;
+			
 				appCollection.fetch({
 					success:function(model,response,option){
 						_.each(response.data.site_hot,function(elem,i){
-							// console.log(elem);
+							console.log(elem);
 
 						})
-
 						//实现搜索某个值返回数据
 						var aaa=_.filter(response.data.site_hot,function(elem,i){
-							console.log(elem)
+							// console.log(elem)
 							return elem.description.match(/新/); 
 						});
-						console.log(aaa);
-						$(_this.el).html(_this.template({data:model.toJSON()}));
+					
+						$(_this.el).html(_this.template({data:response}));
 					}
 				})
 			},
@@ -46,9 +46,22 @@ define(['zepto','underscore','backbone','text!../../template/main.html','shake',
 			},
 			del:function(e){
 				var _left=$(e.currentTarget);
-				_left.parent().remove();
-				// $.getJSON('destory.json',{data:val}, function(data){
-				//   console.log(data)
+				// _left.parent().remove();
+				var appModele=new appModel({
+					id:'3'
+				})
+				appModele.destroy({
+		            success: function (model, response) {
+		             	console.log(model)
+		            },
+		            error: function (error) {
+		                console.log("删除数据出现异常");
+		            },
+		            wait:true
+		        });
+
+				// $.getJSON('http://www.iice.com/ice/frontend/web/index.php/rest/delete/3?callback=', function(data){
+				//   alert('删除成功')
 				// })
 				
 			}

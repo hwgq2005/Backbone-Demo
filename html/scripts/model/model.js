@@ -7,8 +7,15 @@
 
 define(['zepto','underscore','backbone'],function ($,_,Backbone){
 		var appModel=Backbone.Model.extend({
-			url:'',
-			idAttribute:''
+			initialize: function () {
+                //构造函数 
+                this.on('destroy', function () {
+                    console.log('正在调用destroy方法');
+                });
+               
+            },
+			url:'http://www.iice.com/ice/frontend/web/index.php/rest/delete',
+			idAttribute:'id'
 		})
-		return new appModel;
-});
+		return appModel;
+});	

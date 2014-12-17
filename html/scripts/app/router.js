@@ -5,14 +5,18 @@
  * @version $Id$
  */
 
-define(['zepto','underscore','backbone','../view/index','../view/shake'],function ($,_,Backbone,index,shake){
+define(['zepto','underscore','backbone','../view/index','../view/addsite','../view/shake'],function ($,_,Backbone,index,addsite,shake){
 		var Router=Backbone.Router.extend({
 			routes:{
 						'':'index',
+					 'addsite':'addsite',
 				'activity':'activity'
 			},
 			index:function(){
 				this.change(index);
+			},
+			addsite:function(){
+				this.change(addsite);
 			},
 			activity:function(){
 				this.change(shake);

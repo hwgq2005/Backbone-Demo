@@ -6,7 +6,7 @@
  */
 
 define(['zepto','underscore','backbone','../model/model'],function ($,_,Backbone,appModel){
-	var appCollection=Backbone.Model.extend({
+	var appCollection=Backbone.Collection.extend({
 			model: appModel,
 			url:'html/scripts/data.json'
 		})
