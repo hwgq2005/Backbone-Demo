@@ -6,7 +6,7 @@
     </header>
     <ul class="table-view" style="border-top:none;" id="table-list">
         <% _.each(data.data.site_hot,function(app) { %>
-        <li class="table-view-cell"><a class="navigate-right" href ="<%= app.weburl%>"><%= app.name%> </a></li>
+        <li class="table-view-cell" data-id="<%=app.id%>"><a class="navigate-right" href ="<%= app.weburl%>"><%= app.name%> </a></li>
         <%})%>
     </ul>
     <nav class="bar bar-tab">

@@ -11,5 +11,4 @@ define(['zepto','underscore','backbone','../model/model'],function ($,_,Backbone
 			url:'html/scripts/data.json'
 		})
 		return new appCollection;
-		
 });

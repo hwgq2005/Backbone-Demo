@@ -14,9 +14,9 @@ define(['zepto','underscore','backbone','text!../../template/main.html','shake',
 			},
 			rander:function(){ 
 				var _this=this;
-			
 				appCollection.fetch({
 					success:function(model,response,option){
+
 						_.each(response.data.site_hot,function(elem,i){
 							console.log(elem);
 
@@ -43,13 +43,13 @@ define(['zepto','underscore','backbone','text!../../template/main.html','shake',
 					$('.table-view li').find('.delete').remove();
 					_left.data('isedit','false').text('编辑');
 				};
-			},
+			},	
 			del:function(e){
 				var _left=$(e.currentTarget);
 				// _left.parent().remove();
-				var appModele=new appModel({
-					id:'3'
-				})
+				var sid=_left.parent().data('id');
+				var appModele=new appModel({id:sid})
+				appModele.url=appModele.url+'delete';
 				appModele.destroy({
 		            success: function (model, response) {
 		             	console.log(model)

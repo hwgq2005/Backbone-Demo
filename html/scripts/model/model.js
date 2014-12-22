@@ -12,9 +12,8 @@ define(['zepto','underscore','backbone'],function ($,_,Backbone){
                 this.on('destroy', function () {
                     console.log('正在调用destroy方法');
                 });
-               
             },
-			url:'http://www.iice.com/ice/frontend/web/index.php/rest/delete',
+			url:'http://www.iice.com/ice/frontend/web/index.php/rest/',
 			idAttribute:'id'
 		})
 		return appModel;
