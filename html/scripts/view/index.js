@@ -4,7 +4,7 @@
  * @date    2014-10-23 19:54:33
  * @version $Id$
  */
-define(['zepto','underscore','backbone','text!../../template/main.html','shake','../collection/collection','../model/model'],function ($,_,Backbone,indexViewTmp,Carousel,appCollection,appModel){
+define(['zepto','underscore','backbone','text!../../template/main.html','../collection/collection','../model/model'],function ($,_,Backbone,indexViewTmp,appCollection,appModel){
 		var indexView=Backbone.View.extend({
 			el:'#main',
 			template:_.template(indexViewTmp),
