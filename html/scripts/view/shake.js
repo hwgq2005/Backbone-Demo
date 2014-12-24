@@ -4,7 +4,7 @@
  * @date    2014-10-23 19:54:33
  * @version $Id$
  */
-define(['zepto','underscore','backbone','text!../../template/shake.html','shake'],function ($,_,Backbone,shakeViewTmp,Carousel){
+define(['zepto','underscore','backbone','text!../../template/shake.html','shake'],function ($,_,Backbone,shakeViewTmp,shake){
 		var indexView=Backbone.View.extend({
 			el:'#main',
 			template:_.template(shakeViewTmp),
