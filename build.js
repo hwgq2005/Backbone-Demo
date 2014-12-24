@@ -22,7 +22,7 @@
     // 由于我们把r.js和build.js放置在应用程序目录下，我们希望优化器（optimizer）排除这两个文件。 
     // 因此我们可以这样设置/^(r|build)\.js$/。
     //  fileExclusionRegExp: /^(r|build)\.js$/,
-    fileExclusionRegExp: /(^(r|build|Gruntfile)\.js)|(^(sass)\.*)|(^(node_modules)\.*)$/,
+    fileExclusionRegExp: /(^(r|build|Gruntfile)\.js)|(^sass)|(^node_modules)$/,
 
     //模块（modules）的相对目录。
     paths: {
