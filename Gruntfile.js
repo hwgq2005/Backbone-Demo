@@ -3,28 +3,6 @@ module.exports = function(grunt) {
   // 任务配置
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
-    // sass: {
-    //   //target
-    //   // 编译
-    //   build: {
-    //     options: {
-    //       paths: ['sass/'],
-    //       yuicompress: true
-    //     },
-    //     files: {
-    //       'html/style/app.css': ['sass/main.scss']
-    //     }
-    //     // files: [
-    //     //     {
-    //     //         expand: true,
-    //     //         cwd: 'sass/',
-    //     //         src: ['*.scss'],
-    //     //         dest: 'html/style/',
-    //     //         ext: '.css'
-    //     //     }
-    //     // ]
-    //   }
-    // },
     compass: {                  // Task
         dist: {                   // Target
           options: {              // Target options
